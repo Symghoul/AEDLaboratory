@@ -1,7 +1,17 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Prime {
 
+	public static final String FILE_DIRECTION = "AEDLaboratory\\Laboratory1\\src\\data";
+	
+	/**
+	 * The max number in Numbers
+	 */
+	private int maxNumber;
+	
 	/**
 	 * A matrix with Numbers from 1 to the number passed for parameter
 	 */
@@ -22,11 +32,49 @@ public class Prime {
 		this.numbers = numbers;
 	}
 
+//	/**
+//	 * Verify the primes in Numbers using a text archive with them there
+//	 * pre: nPrimes != null
+//	 */
+//	public void verifyPrimePersistance() {
+//		
+//		String[] nPrimes = readText();
+//		int temp;
+//		int posX;
+//		int posY;
+//		for(int i=0; i<nPrimes.length; i++) {
+//			
+//			temp = Integer.parseInt(nPrimes[i]);
+//			posX = (int) Math.ceil((double)temp/(double)nPrimes.length );
+//			posY = (temp%nPrimes.length);
+//			
+//			numbers[posX][posY].setPrime(true);
+//		}
+//		
+//	}
+	
 	/**
-	 * Verify the primes in Numbers using a text archive with them there
+	 * This method gets the primes of the text file 
+	 * @return
 	 */
-	public void verifyPrimePersistance() {
+	private void readText() {
 		
+		String temp = "";
+		String bfRead;
+		try {
+			BufferedReader bf = new BufferedReader(new FileReader(FILE_DIRECTION));
+			while((bfRead = bf.readLine()) != ""+maxNumber ) {
+				
+				temp = temp +" "+ bfRead;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String[] nPrimes = temp.split(" ");
+		// Cambiarle el nombre por el metodo y hacer otras maricadas asi
+//		return nPrimes;
 	}
 	
 	/**
@@ -50,6 +98,7 @@ public class Prime {
 	 */
 	public int[] calibrateMatrix(int userN) {
 	
+		maxNumber = userN;
 		int[] dimensions;
 		double x = Math.ceil((double)(userN));
 		dimensions = new int[]{userN, userN};
@@ -75,7 +124,23 @@ public class Prime {
 		}
 	}
 	
-	public void findPrimes() {
+	/**
+	 * Verify the primes in Numbers using a int array with them there
+	 * @param: nPrimes: A int array with only prime numbers
+	 * pre: nPrimes != null
+	 */
+	public void findPrimes(int[] nPrimes) {
 		
+//		int temp;
+		int posX;
+		int posY;
+		for(int i=0; i<nPrimes.length; i++) {
+			
+//			temp = nPrimes[i];
+			posX = (int) Math.ceil((double)nPrimes[i]/(double)nPrimes.length );
+			posY = (nPrimes[i]%nPrimes.length);
+			
+			numbers[posX][posY].setPrime(true);
+		}
 	}
 }
