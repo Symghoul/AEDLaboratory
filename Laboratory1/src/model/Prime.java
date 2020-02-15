@@ -32,49 +32,28 @@ public class Prime {
 		this.numbers = numbers;
 	}
 
-//	/**
-//	 * Verify the primes in Numbers using a text archive with them there
-//	 * pre: nPrimes != null
-//	 */
-//	public void verifyPrimePersistance() {
-//		
-//		String[] nPrimes = readText();
-//		int temp;
-//		int posX;
-//		int posY;
-//		for(int i=0; i<nPrimes.length; i++) {
-//			
-//			temp = Integer.parseInt(nPrimes[i]);
-//			posX = (int) Math.ceil((double)temp/(double)nPrimes.length );
-//			posY = (temp%nPrimes.length);
-//			
-//			numbers[posX][posY].setPrime(true);
-//		}
-//		
-//	}
 	
 	/**
-	 * This method gets the primes of the text file 
-	 * @return
+	 * This method gets the primes of the text file
 	 */
-	private void readText() {
+	private void verifyPrimePersistance() {
 		
-		String temp = "";
 		String bfRead;
+		int[] intPrimes = new int[maxNumber];
+		int i=0;
+		
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(FILE_DIRECTION));
 			while((bfRead = bf.readLine()) != ""+maxNumber ) {
 				
-				temp = temp +" "+ bfRead;
+				intPrimes[i]=Integer.parseInt(bfRead);
+				i=i+1;
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		String[] nPrimes = temp.split(" ");
-		// Cambiarle el nombre por el metodo y hacer otras maricadas asi
-//		return nPrimes;
+		findPrimes(intPrimes);
 	}
 	
 	/**
@@ -131,12 +110,10 @@ public class Prime {
 	 */
 	public void findPrimes(int[] nPrimes) {
 		
-//		int temp;
 		int posX;
 		int posY;
 		for(int i=0; i<nPrimes.length; i++) {
 			
-//			temp = nPrimes[i];
 			posX = (int) Math.ceil((double)nPrimes[i]/(double)nPrimes.length );
 			posY = (nPrimes[i]%nPrimes.length);
 			
