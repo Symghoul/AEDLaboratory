@@ -1,1 +1,6 @@
+/application/
+/controller/
+/data/
+/model/
 /testModel/
+/threads/
