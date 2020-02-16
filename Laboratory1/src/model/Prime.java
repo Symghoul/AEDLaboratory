@@ -44,9 +44,11 @@ public class Prime {
 		
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(FILE_DIRECTION));
-			while((bfRead = bf.readLine()) != ""+maxNumber ) {
+			String temp = bf.readLine();
+			String[] primes = temp.split(" ");
+			while(primes[i] != ""+maxNumber ) {
 				
-				intPrimes[i]=Integer.parseInt(bfRead);
+				intPrimes[i]=Integer.parseInt(primes[i]);
 				i=i+1;
 			}
 			
