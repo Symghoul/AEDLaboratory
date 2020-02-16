@@ -5,7 +5,7 @@ import java.io.FileReader;
 
 public class Prime {
 
-	public static final String FILE_DIRECTION = "AEDLaboratory\\Laboratory1\\src\\data";
+	public static final String FILE_DIRECTION = "./data/primes.txt";
 	
 	/**
 	 * The max number in Numbers
@@ -46,7 +46,7 @@ public class Prime {
 			BufferedReader bf = new BufferedReader(new FileReader(FILE_DIRECTION));
 			String temp = bf.readLine();
 			String[] primes = temp.split(" ");
-			while(primes[i] != ""+maxNumber ) {
+			while(Integer.parseInt(primes[i]) <= maxNumber ) {
 				
 				intPrimes[i]=Integer.parseInt(primes[i]);
 				i=i+1;
@@ -61,10 +61,10 @@ public class Prime {
 	/**
 	 * Verify the primes in Numbers using the eratostenes algorithm
 	 */
-	public void verifyPrimeEratostenes(int n) {
+	public int[] verifyPrimeEratostenes(int n) {
 		
 		 boolean prime[] = new boolean[n+1];
-	        
+	       int[] isPrime = new int[n+1];
 	        for(int i=0;i<n;i++)
 	        	prime[i] = true;
 	        
@@ -74,8 +74,19 @@ public class Prime {
 	                	for(int j = p*2; j <= n-1; j += p)
 	                    prime[i] = false;
 	            }
-	        }    	
+	        }  
+	        
+	        for(int i = 2; i <= n; i++) {
+ 	        	
+ 	            if(prime[i] == true) {	
+ 	            	isPrime[i]=i;
+ 	            	findPrimes(isPrime);  
+ 	            }
+	        }
+	return isPrime;
 	}
+
+	
 
 		
 	

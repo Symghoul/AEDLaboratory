@@ -5,9 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import junit.framework.TestCase;
 import model.Prime;
 
-class PrimeTest {
+class PrimeTest extends TestCase{
 	
 	private Prime prime;
 
@@ -39,5 +40,16 @@ class PrimeTest {
 		assertTrue(prime.getNumbers()[3][0].isPrime());
 		assertFalse(prime.getNumbers()[2][3].isPrime());
 		
+	}
+	
+	@Test
+	void testVerifyPrimeEratostenes() {
+		
+		setUp1();
+		int[] isTestPrime = {2,3,5,8,11,13};
+		
+		for(int i=0; i<=15; i++) {
+		assertEquals(isTestPrime[i], prime.verifyPrimeEratostenes(15)[i]);
+		}
 	}
 }
