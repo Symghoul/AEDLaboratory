@@ -36,7 +36,7 @@ public class Prime {
 	/**
 	 * This method gets the primes of the text file
 	 */
-	private void verifyPrimePersistance() {
+	public void verifyPrimePersistance() {
 		
 		String bfRead;
 		int[] intPrimes = new int[maxNumber];

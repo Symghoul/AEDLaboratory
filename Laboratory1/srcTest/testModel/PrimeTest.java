@@ -11,14 +11,33 @@ class PrimeTest {
 	
 	private Prime prime;
 
-	
+	@BeforeEach
 	void setUp1() {
 		prime = new Prime();
 	}
 
+	@BeforeEach
+	void setUp2() {
+		prime.generateMatrix(14);
+	}
+	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testGenerateMatrix(){
+	
+		setUp1();
+		setUp2();
+		assertTrue(prime.getNumbers().length==4);
+		assertTrue(prime.getNumbers()[3][3].getNumber()==0);
 	}
 
+	@Test
+	public void testVerifyPrimePersistence() {
+		
+		setUp1();
+		setUp2();
+		prime.verifyPrimePersistance();
+		assertTrue(prime.getNumbers()[3][0].isPrime());
+		assertFalse(prime.getNumbers()[2][3].isPrime());
+		
+	}
 }
