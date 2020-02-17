@@ -22,6 +22,11 @@ class PrimeTest extends TestCase{
 		prime.generateMatrix(14);
 	}
 	
+	@BeforeEach
+	void setUp3() {
+		prime.verifyPrimeEratostenes(15);
+	}
+	
 	@Test
 	public void testGenerateMatrix(){
 	
@@ -45,11 +50,11 @@ class PrimeTest extends TestCase{
 	@Test
 	void testVerifyPrimeEratostenes() {
 		
-		setUp1();
-		int[] isTestPrime = {2,3,5,8,11,13};
+		setUp3();
+		prime.generateMatrix(15);
+		int[] isTestPrime = {2,3,5,7,11,13};
 		
-		for(int i=0; i<=15; i++) {
-		assertEquals(isTestPrime[i], prime.verifyPrimeEratostenes(15)[i]);
-		}
+			assertEquals(isTestPrime[3], prime.getNumbers()[2][1]);
+		
 	}
 }

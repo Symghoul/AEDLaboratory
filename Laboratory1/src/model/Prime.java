@@ -61,7 +61,7 @@ public class Prime {
 	/**
 	 * Verify the primes in Numbers using the eratostenes algorithm
 	 */
-	public int[] verifyPrimeEratostenes(int n) {
+	public void verifyPrimeEratostenes(int n) {
 		
 		 boolean prime[] = new boolean[n+1];
 	     int[] isPrime = new int[n];
@@ -83,13 +83,8 @@ public class Prime {
  	            	findPrimes(isPrime);  
  	            }
 	        }
-	return isPrime;
 	}
 
-	
-
-		
-	
 	
 	/**
 	 * Verify the primes in Numbers using the Euler factorization
