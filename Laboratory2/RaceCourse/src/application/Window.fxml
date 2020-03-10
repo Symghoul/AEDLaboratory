@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contorller.Controller">
+   <children>
+      <ImageView fitHeight="277.0" fitWidth="337.0" layoutX="324.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../data/pista.PNG" />
+         </image>
+      </ImageView>
+      <Label alignment="BOTTOM_LEFT" layoutX="105.0" layoutY="14.0" prefHeight="54.0" prefWidth="362.0" text="El indomable Spirit">
+         <font>
+            <Font name="Castellar" size="28.0" />
+         </font>
+      </Label>
+      <TableView layoutX="3.0" layoutY="86.0" prefHeight="234.0" prefWidth="327.0">
+        <columns>
+          <TableColumn editable="false" prefWidth="124.0" text="Nombre del Jinete" />
+          <TableColumn prefWidth="127.0" text="Nombre del Caballo" />
+            <TableColumn prefWidth="75.0" text="Pista" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="83.0" fitWidth="113.0" layoutX="506.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../data/caballo-.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
