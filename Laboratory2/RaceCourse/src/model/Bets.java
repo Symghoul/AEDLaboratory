@@ -2,14 +2,15 @@ package model;
 
 import java.util.Comparator;
 
-public class Bets<String, Bets> extends NodeHashTable {
+public class Bets {
 
 	private int amountBet;
 	private String horse;
 	private boolean horseWinner;
+	private String key;
 	
-	public Bets(int amountBet, String horse, boolean horseWinner) {
-		super(key, value);
+	public Bets(String key, int amountBet, String horse, boolean horseWinner) {
+		this.key =key;
 		this.amountBet = amountBet;
 		this.horse= horse;
 		this.horseWinner = horseWinner;

@@ -19,7 +19,7 @@ public class HashTable<K extends String ,V> implements IHashTable<K, V> {
 		
 	}
 		
-	@Override
+
 	public void put(K key, V value) {
 		
 		int index = hashFuntion(key);
@@ -36,7 +36,6 @@ public class HashTable<K extends String ,V> implements IHashTable<K, V> {
 		
 	}
 
-	@Override
 	public void remove(K key) throws HashIsEmptyException, NonExistentKeyException {
 		
 		int index = hashFuntion(key);
@@ -75,20 +74,17 @@ public class HashTable<K extends String ,V> implements IHashTable<K, V> {
 		
 	}
 
-	@Override
 	public V get(K key) {
 		int index = hashFuntion(key); 
 		return list[index].getValue(); 
 
 	}
 	
-	@Override
 	public int getSize() {
 		return size;
 		
 	}
 
-	@Override
 	public boolean isEmpty() {
 		return size == 0;
 		

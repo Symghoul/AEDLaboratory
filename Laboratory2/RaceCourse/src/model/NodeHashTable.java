@@ -23,7 +23,7 @@ public class NodeHashTable<K , V > {
 		size = 1; 
 		
 	}
-	
+	//Un arreglo de listas
 
 	public K getKey() {
 		return key;
