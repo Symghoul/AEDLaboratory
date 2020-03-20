@@ -1,7 +1,7 @@
 package exceptions;
 
 @SuppressWarnings("serial")
-public class HashIsEmptyException extends Exception{
+public class HashIsEmptyException extends Exception {
 
 	
 	public HashIsEmptyException(String message) {
