@@ -1,6 +1,6 @@
 package model;
 
-public interface IStack<T > {
+public interface IStack<T> {
 	
 	
 	public void push(T newElement); 

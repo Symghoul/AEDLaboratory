@@ -1,19 +1,25 @@
 package test;
 
+import static org.junit.Assert.assertNull;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import exceptions.HashIsEmptyException;
 import exceptions.NonExistentKeyException;
-import model.*;
+import model.HashTable;
 
 class TestHashTable {
 
-	private HashTable<String, String> HashTable; 
+private HashTable<String, String> HashTable;
+
+	private void setUpStageOne() {
+		
+		HashTable = new HashTable<String, String>(); 
+	}
 	
 	private void setUpStageTwo() {
 		for (int i = 0; i < 10; i++) {
@@ -21,10 +27,7 @@ class TestHashTable {
 		}		
 	}
 	
-	private void setUpStageOne() {
-		HashTable = new HashTable<String, String>(); 
-	}
-
+	
 	private void setUpStageThree() {
 
 		HashTable.put(0+"", "teachers");
@@ -119,4 +122,5 @@ class TestHashTable {
 		}
 
 	}
+
 }

@@ -3,9 +3,9 @@ package model;
 import exceptions.HashIsEmptyException;
 import exceptions.NonExistentKeyException;
 
-public class HashTable<K extends String ,V> implements IHashTable<K, V> {
+public class HashTable<K extends String ,V  > implements IHashTable<K, V> {
 
-	public static final int INITIAL_SIZE = 10;
+	
 
 	private NodeHashTable<K, V>[] list;
  
@@ -14,8 +14,8 @@ public class HashTable<K extends String ,V> implements IHashTable<K, V> {
 	
 	@SuppressWarnings("unchecked")
 	public HashTable() {
-		this.size = 0;
-		list = new NodeHashTable[INITIAL_SIZE];
+		this.size = 1;
+		list = new NodeHashTable[10];
 		
 	}
 		
@@ -93,10 +93,10 @@ public class HashTable<K extends String ,V> implements IHashTable<K, V> {
 	public int hashFuntion(K key) {
 		int index = key.hashCode();
 
-		if(index >  INITIAL_SIZE) {
-			index = key.hashCode()%INITIAL_SIZE;
+		if(index > 10) {
+			index = key.hashCode()%10;
 		}else if (index < 1 ) {
-			index = key.hashCode()*INITIAL_SIZE;
+			index = key.hashCode()*10;
 		}
 		
 		return index + 1;

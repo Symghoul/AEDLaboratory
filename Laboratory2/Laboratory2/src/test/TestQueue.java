@@ -1,9 +1,8 @@
 package test;
 
-
 import static org.junit.Assert.assertFalse;
-
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ import model.Queue;
 
 class TestQueue {
 
-	private Queue<Integer> queue; 
+private Queue<Integer> queue; 
 	
 	private void stageOne() {
 		queue = new Queue<Integer>(); 
@@ -58,4 +57,5 @@ class TestQueue {
 		assertTrue(queue.getSize() == 0);		
 	}
 	
+
 }

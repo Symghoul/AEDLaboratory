@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,13 +10,13 @@ import model.Stack;
 
 class TestStack {
 
-	private Stack<Integer> stack; 
+private Stack<Integer> stack; 
 	
-	private void stageOne() {
+	private void setUpStageOne() {
 		stack = new Stack<Integer>();
 	}
 	
-	void stageTwo() {
+	private void setUpStageTwo() {
 		
 		stack.push(73);
 		stack.push(37);
@@ -25,8 +26,8 @@ class TestStack {
 	}
 	
 	@Test
-	void testOne() {
-		stageOne(); 
+	public void testOne() {
+		setUpStageOne(); 
 		
 		assertTrue(stack.isEmpty());
 		assertTrue(stack.getSize() == 0);
@@ -59,15 +60,14 @@ class TestStack {
 		assertTrue(stack.isEmpty());
 		assertTrue(stack.getSize() == 0);
 		
-		
+		 
 	}
 	
 	@Test
-	
-	void testTwo() {
+	public void testTwo() {
 		
-		stageOne();
-		stageTwo();
+		setUpStageOne();
+		setUpStageTwo();
 		
 		assertTrue(stack.getSize() == 5);
 		assertFalse(stack.isEmpty());
@@ -91,5 +91,6 @@ class TestStack {
 		assertTrue(stack.isEmpty());
 		assertTrue(stack.getSize() == 0);
 	}
+
 
 }
